@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Coding Challenge #2</h1>
+    <script>
+        console.log("$Data1");
+        var Mmass = 78
+        var Mheight = 1.69
+
+        var Mbmi = Mmass / Mheight ** 2
+        console.log("Mark BMI= " + Mbmi.toPrecision(4))
+
+        var Jmass = 92
+        var Jheight = 1.95
+
+        var Jbmi = Jmass / Jheight ** 2
+        console.log("John BMI= " + Jbmi.toPrecision(4))
+
+        markHigherBMI = true;
+
+        if (Mbmi > Jbmi) {
+            console.log("Mark's BMI is higher than John's!");
+            console.log("Mark's BMI (" + Mbmi.toPrecision(4) + ") is higher than John's (" + Jbmi.toPrecision(4) + ")");
+        } else {
+            console.log("John's BMI is higher than Mark's!");
+            console.log("John's BMI (" + Jbmi.toPrecision(4) + ") is higher than Mark's (" + Mbmi.toPrecision(4) + ")");
+        }
+
+        console.log("$Data2");
+        var Mmass = 95
+        var Mheight = 1.88
+
+        var Mbmi = Mmass / Mheight ** 2
+        console.log("Mark BMI= " + Mbmi.toPrecision(4))
+
+        var Jmass = 85
+        var Jheight = 1.76
+
+        var Jbmi = Jmass / Jheight ** 2
+        console.log("John BMI= " + Jbmi.toPrecision(4))
+
+        markHigherBMI = true;
+
+        if (Mbmi > Jbmi) {
+            console.log("Mark's BMI is higher than John's!");
+            console.log("Mark's BMI (" + Mbmi.toPrecision(4) + ") is higher than John's (" + Jbmi.toPrecision(4) + ")");
+        } else {
+            console.log("John's BMI is higher than Mark's!");
+            console.log("John's BMI (" + Jbmi.toPrecision(4) + ") is higher than Mark's (" + Mbmi.toPrecision(4) + ")");
+        }
+    </script>
+</body>
+
+</html>
