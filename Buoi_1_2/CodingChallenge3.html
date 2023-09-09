@@ -11,8 +11,82 @@
 <body>
     <h1>Coding Challenge #3</h1>
     <script>
-        var Dolphins
-        var Koalas
+        console.log("§ Data1");
+        var Dolphins_score = [96, 108, 89]
+        var Koalas_score = [88, 91, 110]
+
+        var Avg_D_s = (Dolphins_score.reduce((p, a) => p + a, 0)) / Dolphins_score.length
+        // console.log(Avg_D_s.toPrecision(6));
+        var Avg_K_s = (Koalas_score.reduce((p, a) => p + a, 0)) / Koalas_score.length
+        // console.log(Avg_K_s.toPrecision(6));
+
+        if (Avg_D_s > Avg_K_s) {
+            console.log("Team Dolphins is greater than team Koalas");
+            console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        } else if (Avg_D_s < Avg_K_s) {
+            console.log("Team Koalas is greater than team Dolphins");
+            console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        } else {
+            console.log("Team Koalas and team Dolphins are draw");
+        }
+
+        console.log("§ Data Bonus 1");
+        var Dolphins_score = [97, 112, 101]
+        var Koalas_score = [109, 95, 123]
+
+        var Avg_D_s = (Dolphins_score.reduce((p, a) => p + a, 0)) / Dolphins_score.length
+        // console.log(Avg_D_s.toPrecision(6));
+        var Avg_K_s = (Koalas_score.reduce((p, a) => p + a, 0)) / Koalas_score.length
+        // console.log(Avg_K_s.toPrecision(6));
+
+        if (Avg_D_s >= 100 && Avg_K_s >= 100) {
+            if (Avg_D_s > Avg_K_s) {
+                console.log("Team Dolphins is greater than team Koalas");
+                console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+            } else if (Avg_D_s < Avg_K_s) {
+                console.log("Team Koalas is greater than team Dolphins");
+                console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+            } else {
+                console.log("Team Koalas and team Dolphins are draw");
+            }
+        } else if (Avg_D_s < 100) {
+            console.log("Team Koalas is greater than team Dolphins");
+            console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        } else if (Avg_K_s < 100) {
+            console.log("Team Dolphins is greater than team Koalas");
+            console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        } else {
+            console.log("No team wins the trophy because no team has score 100 or more than 100");
+        }
+
+        console.log("§ Data Bonus 2");
+        var Dolphins_score = [97, 112, 101]
+        var Koalas_score = [109, 95, 106]
+
+        var Avg_D_s = (Dolphins_score.reduce((p, a) => p + a, 0)) / Dolphins_score.length
+        // console.log(Avg_D_s.toPrecision(6));
+        var Avg_K_s = (Koalas_score.reduce((p, a) => p + a, 0)) / Koalas_score.length
+        // console.log(Avg_K_s.toPrecision(6));
+
+        if (Avg_D_s >= 100 && Avg_K_s >= 100) {
+            if (Avg_D_s > Avg_K_s) {
+                console.log("Team Dolphins is greater than team Koalas");
+                console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+            } else if (Avg_D_s < Avg_K_s) {
+                console.log("Team Koalas is greater than team Dolphins");
+                console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+            } else {
+                console.log("Team Koalas and team Dolphins are draw");
+            }
+        } else if (Avg_D_s < 100) {
+            console.log("Team Koalas is greater than team Dolphins");
+            console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        } else if (Avg_K_s < 100) {
+            console.log("Team Dolphins is greater than team Koalas");
+            console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        } else {
+            console.log("No team wins the trophy because no team has score 100 or more than 100");
+        }
     </script>
 </body>
 
