@@ -11,8 +11,20 @@
 <body>
     <h1>Coding Challenge #4</h1>
     <script>
-        var tip = [15,20]
-        
+        console.log("§ Data 1");
+        var bill = [275,40,430]
+        var tip = [15/100,20/100]
+        for (let index = 0; index < bill.length; index++) {
+            var total = (bill[index] >= 50 && bill[index] <= 300) ? bill[index] + tip[0] : bill[index] + tip[1]
+            console.log("Bill: " + (index + 1));
+            console.log("Bill: " + bill[index]);
+            if (bill[index] >= 50 && bill[index] <= 300){
+                console.log("Tip: " + tip[0]);
+            } else {
+                console.log("Tip: " + tip[1]);
+            }
+            console.log("Bill + tip = " + total); 
+        }
     </script>
 </body>
 
