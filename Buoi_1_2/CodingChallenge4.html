@@ -15,14 +15,11 @@
         var bill = [275,40,430]
         var tip = [15/100,20/100]
         for (let index = 0; index < bill.length; index++) {
-            var total = (bill[index] >= 50 && bill[index] <= 300) ? bill[index] + tip[0] : bill[index] + tip[1]
+            var toal_tip = (bill[index] >= 50 && bill[index] <= 300) ? bill[index] * tip[0] : bill[index] * tip[1]
+            var total = (bill[index] >= 50 && bill[index] <= 300) ? bill[index] + toal_tip : bill[index] + toal_tip
             console.log("Bill: " + (index + 1));
             console.log("Bill: " + bill[index]);
-            if (bill[index] >= 50 && bill[index] <= 300){
-                console.log("Tip: " + tip[0]);
-            } else {
-                console.log("Tip: " + tip[1]);
-            }
+            console.log("Tip: " + toal_tip);
             console.log("Bill + tip = " + total); 
         }
     </script>
