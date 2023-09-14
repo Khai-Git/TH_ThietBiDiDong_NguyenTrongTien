@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Coding Challenge #5</h1>
+    <script>
+        console.log("§ Data1");
+        var Dolphins_score = [44, 23, 71]
+        var Koalas_score = [65, 54, 49]
+
+        function calcAverage(data){
+            return data.reduce((p,a) => p + a, 0)
+        }
+
+        console.log(calcAverage(Dolphins_score));
+        console.log(calcAverage(Koalas_score));
+
+        // var Avg_D_s = (Dolphins_score.reduce((p, a) => p + a, 0)) / Dolphins_score.length
+        // // console.log(Avg_D_s.toPrecision(6));
+        // var Avg_K_s = (Koalas_score.reduce((p, a) => p + a, 0)) / Koalas_score.length
+        // // console.log(Avg_K_s.toPrecision(6));
+        // if (Avg_D_s > Avg_K_s) {
+        //     console.log("Team Dolphins is greater than team Koalas");
+        //     console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        // } else if (Avg_D_s < Avg_K_s) {
+        //     console.log("Team Koalas is greater than team Dolphins");
+        //     console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        // } else {
+        //     console.log("Team Koalas and team Dolphins are draw");
+        // }
+
+        // console.log("§ Data 2");
+        // var Dolphins_score = [85, 54, 41]
+        // var Koalas_score = [23, 34, 27]
+
+        // var Avg_D_s = (Dolphins_score.reduce((p, a) => p + a, 0)) / Dolphins_score.length
+        // // console.log(Avg_D_s.toPrecision(6));
+        // var Avg_K_s = (Koalas_score.reduce((p, a) => p + a, 0)) / Koalas_score.length
+        // // console.log(Avg_K_s.toPrecision(6));
+
+        // if (Avg_D_s >= 100 && Avg_K_s >= 100) {
+        //     if (Avg_D_s > Avg_K_s) {
+        //         console.log("Team Dolphins is greater than team Koalas");
+        //         console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        //     } else if (Avg_D_s < Avg_K_s) {
+        //         console.log("Team Koalas is greater than team Dolphins");
+        //         console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        //     } else {
+        //         console.log("Team Koalas and team Dolphins are draw");
+        //     }
+        // } else if (Avg_D_s < 100) {
+        //     console.log("Team Koalas is greater than team Dolphins");
+        //     console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        // } else if (Avg_K_s < 100) {
+        //     console.log("Team Dolphins is greater than team Koalas");
+        //     console.log("Score Average: Dolphins team: (" + Avg_D_s.toPrecision(6) + ") : (" + Avg_K_s.toPrecision(6) + ") Koalas team");
+        // } else {
+        //     console.log("No team wins the trophy because no team has score 100 or more than 100");
+        // }
+    </script>
+</body>
+
+</html>
