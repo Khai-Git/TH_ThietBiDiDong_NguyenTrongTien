@@ -1,0 +1,30 @@
+#padding0 {
+    padding: 0;
+}
+
+#btn {
+    font-size: medium;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0;
+    width: 350px;
+    background-color: rgb(255, 221, 71);
+}
+
+#submitbtn {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+h1,p,b {
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#email{
+    height: 45px;
+    width: 340px;
+    border: 0;
+    background-color: rgb(189, 189, 189);
+}
