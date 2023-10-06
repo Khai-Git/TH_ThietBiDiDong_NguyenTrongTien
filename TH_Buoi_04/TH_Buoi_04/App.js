@@ -27,7 +27,7 @@ export default function App() {
         <Text>Hãy chia sẻ những điều mà bạn thích về sản phẩm</Text>
         <Text>https://meet.google.com/nsj-ojwi-xpp</Text>
 
-        <input value="Gửi"></input>
+        <button>Gửi</button>
       </View>
     </View>
   );
