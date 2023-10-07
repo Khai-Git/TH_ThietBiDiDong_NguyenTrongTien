@@ -4,9 +4,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
-import USB from "./assets/usb.png";
-import Star from "./assets/Star.png";
-import Camera from "./assets/camera.png";
+import USB from "../assets/usb.png";
+import Star from "../assets/Star.png";
+import Camera from "../assets/camera.png";
 
 export default function App() {
   return (

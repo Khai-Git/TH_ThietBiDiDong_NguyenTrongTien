@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
@@ -7,36 +7,41 @@ import { Fontisto } from "@expo/vector-icons";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.gradient}>
-        <div>
-          <div style={styles.divTitle}>
-            <h1> LOGIN </h1>
-          </div>
-          <div>
-            <div style={styles.divInput}>
-              <Ionicons
-                style={styles.icon}
-                name="person"
-                size={24}
-                color="black"
-              />
-              <input style={styles.input} value="Name"></input>
-            </div>
-            <br></br>
-            <div style={styles.divInput}>
-              <Fontisto name="locked" size={24} color="black" />
-              <input style={styles.input} value="Password"></input>
-              <AntDesign name="eye" size={24} color="black" />
-            </div>
-
-            <button style={styles.button}> LOGIN </button>
-
-            <b> Forgot your password ? </b>
-          </div>
-        </div>
+    <SafeAreaView>
+      <View>
+        
       </View>
-    </View>
+    </SafeAreaView>
+    // <View style={styles.container}>
+    //   <View style={styles.gradient}>
+    //     <div>
+    //       <div style={styles.divTitle}>
+    //         <h1> LOGIN </h1>
+    //       </div>
+    //       <div>
+    //         <div style={styles.divInput}>
+    //           <Ionicons
+    //             style={styles.icon}
+    //             name="person"
+    //             size={24}
+    //             color="black"
+    //           />
+    //           <input style={styles.input} value="Name"></input>
+    //         </div>
+    //         <br></br>
+    //         <div style={styles.divInput}>
+    //           <Fontisto name="locked" size={24} color="black" />
+    //           <input style={styles.input} value="Password"></input>
+    //           <AntDesign name="eye" size={24} color="black" />
+    //         </div>
+
+    //         <button style={styles.button}> LOGIN </button>
+
+    //         <b> Forgot your password ? </b>
+    //       </div>
+    //     </div>
+    //   </View>
+    // </View>
   );
 }
 
