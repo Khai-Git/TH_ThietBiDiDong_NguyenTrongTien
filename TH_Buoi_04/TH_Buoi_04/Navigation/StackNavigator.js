@@ -50,11 +50,11 @@ const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="page2a"
           component={page2a}
           options={{ headerShown: false }}
-        />
+        /> */}
         <Stack.Screen
           name="page2b"
           component={page2b}

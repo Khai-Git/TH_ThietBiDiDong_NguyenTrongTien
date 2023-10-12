@@ -13,7 +13,7 @@ function Login() {
   return (
     <View style={styles.container}>
       <Text>asd</Text>
-      {/* <View style={styles.header}>
+      <View style={styles.header}>
         <TouchableOpacity>
           <Icon name="arrow-circle-left" size={30} />
         </TouchableOpacity>
@@ -66,7 +66,7 @@ function Login() {
             </View>
           </View>
         </Stack>
-      </View> */}
+      </View>
     </View>
   );
 }
