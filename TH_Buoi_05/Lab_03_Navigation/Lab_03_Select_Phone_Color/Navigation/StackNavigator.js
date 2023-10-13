@@ -24,7 +24,7 @@ const StackNavigator = () => {
           name="Screen1"
           component={Screen1}
           options={{
-            tabBarLabel: "Home",
+            tabBarLabel: "Screen1",
             TabBarLabelStyle: { color: "#000E97" },
             headerShown: false,
             tabBarIcon: ({ focus }) =>
@@ -39,7 +39,7 @@ const StackNavigator = () => {
           name="Screen2"
           component={Screen2}
           options={{
-            tabBarLabel: "Profile",
+            tabBarLabel: "Screen2",
             TabBarLabelStyle: { color: "#000E97" },
             headerShown: false,
             tabBarIcon: ({ focus }) =>
@@ -54,7 +54,7 @@ const StackNavigator = () => {
           name="Screen3"
           component={Screen3}
           options={{
-            tabBarLabel: "Profile",
+            tabBarLabel: "Screen3",
             TabBarLabelStyle: { color: "#000E97" },
             headerShown: false,
             tabBarIcon: ({ focus }) =>
@@ -69,7 +69,7 @@ const StackNavigator = () => {
           name="Screen4"
           component={Screen4}
           options={{
-            tabBarLabel: "Profile",
+            tabBarLabel: "Screen4",
             TabBarLabelStyle: { color: "#000E97" },
             headerShown: false,
             tabBarIcon: ({ focus }) =>
@@ -84,7 +84,7 @@ const StackNavigator = () => {
           name="Screen5"
           component={Screen5}
           options={{
-            tabBarLabel: "Profile",
+            tabBarLabel: "Screen5",
             TabBarLabelStyle: { color: "#000E97" },
             headerShown: false,
             tabBarIcon: ({ focus }) =>
@@ -99,7 +99,7 @@ const StackNavigator = () => {
           name="Screen6"
           component={Screen6}
           options={{
-            tabBarLabel: "Profile",
+            tabBarLabel: "Screen6",
             TabBarLabelStyle: { color: "#000E97" },
             headerShown: false,
             tabBarIcon: ({ focus }) =>
@@ -116,16 +116,37 @@ const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        {" "}
         {
           <Stack.Screen
-            name="page2a"
-            component={page2a}
+            name="Screen1"
+            component={Screen1}
             options={{ headerShown: false }}
           />
         }{" "}
         <Stack.Screen
-          name="page2b"
-          component={page2b}
+          name="Screen2"
+          component={Screen2}
+          options={{ headerShown: false }}
+        />{" "}
+        <Stack.Screen
+          name="Screen3"
+          component={Screen3}
+          options={{ headerShown: false }}
+        />{" "}
+        <Stack.Screen
+          name="Screen4"
+          component={Screen4}
+          options={{ headerShown: false }}
+        />{" "}
+        <Stack.Screen
+          name="Screen5"
+          component={Screen5}
+          options={{ headerShown: false }}
+        />{" "}
+        <Stack.Screen
+          name="Screen6"
+          component={Screen6}
           options={{ headerShown: false }}
         />{" "}
       </Stack.Navigator>{" "}
