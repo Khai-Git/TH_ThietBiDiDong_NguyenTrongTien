@@ -2,52 +2,34 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import StackNavigator from "./Navigation/StackNavigator";
 
+const bike = [];
+
 export default function App() {
   return (
     <View style={styles.container}>
-      {" "}
-      {/* <StackNavigator />{" "} */}{" "}
-      <View>
-        <Text
-          style={{
-            fontFamily: "VT323",
-            fontSize: "26px",
-            fontWeight: "400",
-            lineHeight: "26px",
-            letterSpacing: "0em",
-            textAlign: "center",
-          }}
-        >
-          A premium online store for sporter and their stylish choice{" "}
-        </Text>{" "}
-      </View>{" "}
-      <View>
-        <Image
-          source={require("../Bicycle/assets/Mountainbike-blue.png")}
-          style={{
-            width: "250px",
-            height: "250px",
-            resizeMode: "contain",
-          }}
-        />{" "}
-      </View>{" "}
+      {/* <StackNavigator /> */}{" "}
       <View>
         <Text
           style={{
             fontFamily: "Ubuntu",
-            fontSize: "26px",
+            fontSize: "25px",
             fontWeight: "700",
-            lineHeight: "30px",
+            lineHeight: "29px",
             letterSpacing: "0em",
             textAlign: "center",
           }}
         >
-          POWER BIKE SHOP{" "}
+          The world’ s Best Bike{" "}
         </Text>{" "}
       </View>{" "}
-      <Button title="Get Start" onClick={() => {}}>
-        {" "}
-      </Button>{" "}
+      <View
+        style={{
+          flexDirection: "row",
+        }}
+      >
+        <Button title="All"> </Button> <Button title="Roadbike"> </Button>
+        <Button title="Mountain"> </Button>{" "}
+      </View>{" "}
     </View>
   );
 }
