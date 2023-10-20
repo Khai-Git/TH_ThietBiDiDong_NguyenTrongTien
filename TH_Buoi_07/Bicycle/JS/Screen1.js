@@ -1,12 +1,16 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, Button } from "react-native";
-import StackNavigator from "./Navigation/StackNavigator";
+import {
+  StyleSheet,
+  View,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  SafeAreaView,
+} from "react-native";
+import { Stack, Text } from "@react-native-material/core";
 
-export default function App() {
+function App() {
   return (
-    <View style={styles.container}>
-      {" "}
-      {/* <StackNavigator />{" "} */}{" "}
+    <SafeAreaView style={{ flex: 1 }}>
       <View>
         <Text
           style={{
@@ -23,7 +27,7 @@ export default function App() {
       </View>{" "}
       <View>
         <Image
-          source={require("../Bicycle/assets/Mountainbike-blue.png")}
+          //   source={require("../Bicycle/assets/Mountainbike-blue.png")}
           style={{
             width: "250px",
             height: "250px",
@@ -48,15 +52,17 @@ export default function App() {
       <Button title="Get Start" onClick={() => {}}>
         {" "}
       </Button>{" "}
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    padding: 20,
+    paddingTop: 30,
+    backgroundImage: "#FFFFFF",
   },
 });
+
+export default App;
