@@ -21,8 +21,8 @@ function App() {
             height: "50%",
             resizeMode: "contain",
           }}
-        />{" "}
-        <Text> Điện Thoại Vsmart Joy 3 - Hàng chính hãng </Text>{" "}
+        />
+        <Text> Điện Thoại Vsmart Joy 3 - Hàng chính hãng </Text>
         <View style={{ flexDirection: "row", margin: 10 }}>
           <View
             style={{
@@ -30,15 +30,15 @@ function App() {
               marginRight: "30px",
             }}
           >
-            <Image source={require("../assets/star.png")} />{" "}
-            <Image source={require("../assets/star.png")} />{" "}
-            <Image source={require("../assets/star.png")} />{" "}
-            <Image source={require("../assets/star.png")} />{" "}
-            <Image source={require("../assets/star.png")} />{" "}
-          </View>{" "}
+            <Image source={require("../assets/star.png")} />
+            <Image source={require("../assets/star.png")} />
+            <Image source={require("../assets/star.png")} />
+            <Image source={require("../assets/star.png")} />
+            <Image source={require("../assets/star.png")} />
+          </View>
           <View>
-            <Text> (Xem 828 đánh giá) </Text>{" "}
-          </View>{" "}
+            <Text> (Xem 828 đánh giá) </Text>
+          </View>
         </View>
         <View
           style={{
@@ -58,25 +58,23 @@ function App() {
                 fontWeight: "bold",
               }}
             >
-              {" "}
-              1.790 .000{" "}
-            </Text>{" "}
-          </View>{" "}
+              1.790 .000
+            </Text>
+          </View>
           <View>
             <Text
               style={{
                 textDecorationLine: "line-through",
               }}
             >
-              {" "}
-              1.790 .000{" "}
-            </Text>{" "}
-          </View>{" "}
-        </View>{" "}
+              1.790 .000
+            </Text>
+          </View>
+        </View>
         <View>
-          <Text> Ở ĐÂU RẺ HƠN HOÀN TIỀN </Text>{" "}
-        </View>{" "}
-      </View>{" "}
+          <Text> Ở ĐÂU RẺ HƠN HOÀN TIỀN </Text>
+        </View>
+      </View>
     </SafeAreaView>
   );
 }

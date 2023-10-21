@@ -34,7 +34,7 @@ const StackNavigator = () => {
                 <Feather name="home" size={24} color="black" />
               ),
           }}
-        />{" "}
+        />
         <Tab.Screen
           name="Screen2"
           component={Screen2}
@@ -49,7 +49,7 @@ const StackNavigator = () => {
                 <Feather name="home" size={24} color="black" />
               ),
           }}
-        />{" "}
+        />
         <Tab.Screen
           name="Screen3"
           component={Screen3}
@@ -64,7 +64,7 @@ const StackNavigator = () => {
                 <Feather name="home" size={24} color="black" />
               ),
           }}
-        />{" "}
+        />
         <Tab.Screen
           name="Screen4"
           component={Screen4}
@@ -79,7 +79,7 @@ const StackNavigator = () => {
                 <Feather name="home" size={24} color="black" />
               ),
           }}
-        />{" "}
+        />
         <Tab.Screen
           name="Screen5"
           component={Screen5}
@@ -94,7 +94,7 @@ const StackNavigator = () => {
                 <Feather name="home" size={24} color="black" />
               ),
           }}
-        />{" "}
+        />
         <Tab.Screen
           name="Screen6"
           component={Screen6}
@@ -109,47 +109,46 @@ const StackNavigator = () => {
                 <Feather name="home" size={24} color="black" />
               ),
           }}
-        />{" "}
+        />
       </Tab.Navigator>
     );
   }
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {" "}
         {
           <Stack.Screen
             name="Screen1"
             component={Screen1}
             options={{ headerShown: false }}
           />
-        }{" "}
+        }
         <Stack.Screen
           name="Screen2"
           component={Screen2}
           options={{ headerShown: false }}
-        />{" "}
+        />
         <Stack.Screen
           name="Screen3"
           component={Screen3}
           options={{ headerShown: false }}
-        />{" "}
+        />
         <Stack.Screen
           name="Screen4"
           component={Screen4}
           options={{ headerShown: false }}
-        />{" "}
+        />
         <Stack.Screen
           name="Screen5"
           component={Screen5}
           options={{ headerShown: false }}
-        />{" "}
+        />
         <Stack.Screen
           name="Screen6"
           component={Screen6}
           options={{ headerShown: false }}
-        />{" "}
-      </Stack.Navigator>{" "}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
