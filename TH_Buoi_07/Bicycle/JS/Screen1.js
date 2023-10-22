@@ -22,19 +22,19 @@ function App() {
             textAlign: "center",
           }}
         >
-          A premium online store for sporter and their stylish choice{" "}
-        </Text>{" "}
-      </View>{" "}
+          A premium online store for sporter and their stylish choice
+        </Text>
+      </View>
       <View>
         <Image
-          //   source={require("../Bicycle/assets/Mountainbike-blue.png")}
+            source={"../Bicycle/assets/Mountainbike-blue.png"}
           style={{
             width: "250px",
             height: "250px",
             resizeMode: "contain",
           }}
-        />{" "}
-      </View>{" "}
+        />
+      </View>
       <View>
         <Text
           style={{
@@ -46,12 +46,12 @@ function App() {
             textAlign: "center",
           }}
         >
-          POWER BIKE SHOP{" "}
-        </Text>{" "}
-      </View>{" "}
+          POWER BIKE SHOP
+        </Text>
+      </View>
       <Button title="Get Start" onClick={() => {}}>
-        {" "}
-      </Button>{" "}
+        
+      </Button>
     </SafeAreaView>
   );
 }
