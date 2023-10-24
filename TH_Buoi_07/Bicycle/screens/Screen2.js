@@ -28,6 +28,7 @@ function App({ navigation }) {
               borderBottomRightRadius: 10,
               justifyContent: "center",
               alignItems: "center",
+              borderRadius: "10px",
             }}
           >
             <Image
@@ -138,7 +139,8 @@ function App({ navigation }) {
               flexWrap: "wrap",
             }}
             contentContainerStyle={styles.content}
-            horizontal={true}
+            horizontal={false}
+            numColumns={2}
           />
         </View>
       </ScrollView>
