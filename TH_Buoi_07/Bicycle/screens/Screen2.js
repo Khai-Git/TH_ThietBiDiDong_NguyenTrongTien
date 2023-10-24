@@ -5,36 +5,144 @@ import {
   TouchableOpacity,
   TextInput,
   SafeAreaView,
+  Pressable,
+  FlatList,
+  ScrollView,
 } from "react-native";
 import { Stack, Text } from "@react-native-material/core";
+import bike from "../data/dataBike";
 
-function App() {
+function App({ navigation }) {
+  const renderBike = ({ item }) => {
+    return (
+      <View style={{ flexDirection: "row", alignItems: "center", paddingTop: 10 ,paddingLeft: 10}}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Screen3")}
+        >
+          <View
+            style={{
+              height: "200px",
+              width: "167px",
+              backgroundColor: "#F7BA8326",
+              borderTopRightRadius: 10,
+              borderBottomRightRadius: 10,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Image
+              source={item.image}
+              style={{
+                width: "70%",
+                height: "70%",
+                resizeMode: "contain",
+              }}
+            />
+            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              {item.name}
+            </Text>
+            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              {item.price}
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+    );
+  };
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <View style={styles.container}>
       <View>
         <Text
           style={{
+            color: "red",
+            fontWeight: "bold",
             fontFamily: "Ubuntu",
             fontSize: "25px",
             fontWeight: "700",
             lineHeight: "29px",
             letterSpacing: "0em",
-            textAlign: "center",
+            textAlign: "start",
+            marginVertical: "20px",
           }}
         >
-          {" "}
-          The world’ s Best Bike{" "}
-        </Text>{" "}
-      </View>{" "}
+          The world's Best Bike
+        </Text>
+      </View>
       <View
         style={{
           flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginVertical: "10px",
         }}
       >
-        <Button title="All"> </Button> <Button title="Roadbike"> </Button>{" "}
-        <Button title="Mountain"> </Button>{" "}
-      </View>{" "}
-    </SafeAreaView>
+        <Pressable
+          style={{
+            fontFamily: "Voltaire",
+            backgroundColor: "transparent",
+            width: "25%",
+            height: "30px",
+            justifyContent: "center",
+            alignItems: "center",
+            borderWidth: "1px",
+            borderRadius: "5px",
+            borderColor: "red",
+            color: "red",
+            fontWeight: "bold",
+          }}
+        >
+          All
+        </Pressable>
+        <Pressable
+          style={{
+            fontFamily: "Voltaire",
+            backgroundColor: "transparent",
+            width: "25%",
+            height: "30px",
+            justifyContent: "center",
+            alignItems: "center",
+            borderWidth: "1px",
+            borderRadius: "5px",
+            borderColor: "red",
+            color: "silver",
+            fontWeight: "bold",
+          }}
+        >
+          Roadbike
+        </Pressable>
+        <Pressable
+          style={{
+            fontFamily: "Voltaire",
+            backgroundColor: "transparent",
+            width: "25%",
+            height: "30px",
+            justifyContent: "center",
+            alignItems: "center",
+            borderWidth: "1px",
+            borderRadius: "5px",
+            borderColor: "red",
+            color: "silver",
+            fontWeight: "bold",
+          }}
+        >
+          Mountain
+        </Pressable>
+      </View>
+      <ScrollView>
+        <View>
+          <FlatList
+            data={bike}
+            renderItem={renderBike}
+            keyExtractor={(item) => item.id}
+            style={{
+              flexWrap: "wrap",
+            }}
+            contentContainerStyle={styles.content}
+            horizontal={true}
+          />
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 
