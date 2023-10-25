@@ -15,13 +15,13 @@ import bike from "../data/dataBike";
 function App({ navigation }) {
   const renderBike = ({ item }) => {
     return (
-      <View style={{ flexDirection: "row", alignItems: "center", paddingTop: 10 ,paddingLeft: 10}}>
+      <View style={{ flexDirection: "row", alignItems: "center", paddingTop: 10 ,paddingLeft: 10 }}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Screen3")}
         >
           <View
             style={{
-              height: "200px",
+              height: "210px",
               width: "167px",
               backgroundColor: "#F7BA8326",
               borderTopRightRadius: 10,
@@ -31,6 +31,13 @@ function App({ navigation }) {
               borderRadius: "10px",
             }}
           >
+            <Image style={{
+              width: "20px",
+              height: "20px",
+              position: "absolute",
+              top: 10,
+              left: 10,
+            }} source={require("../assets/akar-icons_heart.png")}/>
             <Image
               source={item.image}
               style={{
