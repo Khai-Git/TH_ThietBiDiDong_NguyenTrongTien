@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -12,13 +13,23 @@ import {
 import { Stack, Text } from "@react-native-material/core";
 import bike from "../data/dataBike";
 
-function App({ navigation }) {
+function App({ navigation, route }) {
+  const [activeBtn, setActiveBtn] = React.useState(0);
+  const [data, setData] = React.useState(bike);
+
+  
+
   const renderBike = ({ item }) => {
     return (
-      <View style={{ flexDirection: "row", alignItems: "center", paddingTop: 10 ,paddingLeft: 10 }}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Screen3")}
-        >
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          paddingTop: 10,
+          paddingLeft: 10,
+        }}
+      >
+        <TouchableOpacity onPress={() => navigation.navigate("Screen3")}>
           <View
             style={{
               height: "210px",
@@ -31,13 +42,16 @@ function App({ navigation }) {
               borderRadius: "10px",
             }}
           >
-            <Image style={{
-              width: "20px",
-              height: "20px",
-              position: "absolute",
-              top: 10,
-              left: 10,
-            }} source={require("../assets/akar-icons_heart.png")}/>
+            <Image
+              style={{
+                width: "20px",
+                height: "20px",
+                position: "absolute",
+                top: 10,
+                left: 10,
+              }}
+              source={require("../assets/akar-icons_heart.png")}
+            />
             <Image
               source={item.image}
               style={{
@@ -57,6 +71,7 @@ function App({ navigation }) {
       </View>
     );
   };
+
   return (
     <View style={styles.container}>
       <View>
@@ -85,52 +100,34 @@ function App({ navigation }) {
         }}
       >
         <Pressable
-          style={{
-            fontFamily: "Voltaire",
-            backgroundColor: "transparent",
-            width: "25%",
-            height: "30px",
-            justifyContent: "center",
-            alignItems: "center",
-            borderWidth: "1px",
-            borderRadius: "5px",
-            borderColor: "red",
-            color: "red",
-            fontWeight: "bold",
+          style={activeBtn === 0 ? styles.btnActive : styles.btnNotActive}
+          onPress={() => {
+            setActiveBtn(0);
+            setData(bike.filter((data) => {
+              return data;
+            }))
           }}
         >
           All
         </Pressable>
         <Pressable
-          style={{
-            fontFamily: "Voltaire",
-            backgroundColor: "transparent",
-            width: "25%",
-            height: "30px",
-            justifyContent: "center",
-            alignItems: "center",
-            borderWidth: "1px",
-            borderRadius: "5px",
-            borderColor: "red",
-            color: "silver",
-            fontWeight: "bold",
+          style={activeBtn === 1 ? styles.btnActive : styles.btnNotActive}
+          onPress={() => {
+            setActiveBtn(1);
+            setData(bike.filter((data) => {
+              return data.type === "roadbike";
+            }))
           }}
         >
           Roadbike
         </Pressable>
         <Pressable
-          style={{
-            fontFamily: "Voltaire",
-            backgroundColor: "transparent",
-            width: "25%",
-            height: "30px",
-            justifyContent: "center",
-            alignItems: "center",
-            borderWidth: "1px",
-            borderRadius: "5px",
-            borderColor: "red",
-            color: "silver",
-            fontWeight: "bold",
+          style={activeBtn === 2 ? styles.btnActive : styles.btnNotActive}
+          onPress={() => {
+            setActiveBtn(2);
+            setData(bike.filter((data) => {
+              return data.type === "mountain";
+            }))
           }}
         >
           Mountain
@@ -139,7 +136,7 @@ function App({ navigation }) {
       <ScrollView>
         <View>
           <FlatList
-            data={bike}
+            data={data}
             renderItem={renderBike}
             keyExtractor={(item) => item.id}
             style={{
@@ -161,6 +158,32 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingTop: 30,
     backgroundImage: "#FFFFFF",
+  },
+  btnActive: {
+    fontFamily: "Voltaire",
+    backgroundColor: "transparent",
+    width: "25%",
+    height: "30px",
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: "1px",
+    borderRadius: "5px",
+    borderColor: "red",
+    color: "red",
+    fontWeight: "bold",
+  },
+  btnNotActive: {
+    fontFamily: "Voltaire",
+    backgroundColor: "transparent",
+    width: "25%",
+    height: "30px",
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: "1px",
+    borderRadius: "5px",
+    borderColor: "red",
+    color: "silver",
+    fontWeight: "bold",
   },
 });
 
