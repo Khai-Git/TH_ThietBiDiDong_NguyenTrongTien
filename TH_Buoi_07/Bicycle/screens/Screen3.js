@@ -11,8 +11,6 @@ import {
 import React, { useState } from "react";
 import { Stack, Text } from "@react-native-material/core";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App({ navigation }) {
   return (

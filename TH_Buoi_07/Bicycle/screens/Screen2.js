@@ -16,9 +16,7 @@ import bike from "../data/dataBike";
 function App({ navigation, route }) {
   const [activeBtn, setActiveBtn] = React.useState(0);
   const [data, setData] = React.useState(bike);
-
   
-
   const renderBike = ({ item }) => {
     return (
       <View
