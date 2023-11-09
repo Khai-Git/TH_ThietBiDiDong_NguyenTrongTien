@@ -78,7 +78,7 @@ export default function Screen2({ route, navigation }) {
 
             </View>
             <View style={{ alignItems: "center", alignItems: "center", marginTop: 30 }}>
-                <Pressable onPress={() => navigation.navigate("Screen3")} style={{ height: "50px", width: "50px", borderRadius: "50%", backgroundColor: "green", alignItems: "center", justifyContent: "center", color: "white" }}>
+                <Pressable onPress={() => navigation.navigate("Screen3",{Name})} style={{ height: "50px", width: "50px", borderRadius: "50%", backgroundColor: "green", alignItems: "center", justifyContent: "center", color: "white" }}>
                     +
                 </Pressable>
             </View>
