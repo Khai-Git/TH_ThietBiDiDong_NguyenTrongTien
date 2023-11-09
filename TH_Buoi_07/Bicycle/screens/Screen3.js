@@ -143,7 +143,7 @@ function App({ navigation }) {
             textAlign: "center",
             marginLeft: "30px",
           }}
-          onPress={() => navigation.navigate("Screen2")}
+          onPress={() => navigation.navigate("Screen1")}
         >
           Add to card
         </Pressable>
