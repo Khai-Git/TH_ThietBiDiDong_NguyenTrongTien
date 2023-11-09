@@ -1,31 +1,26 @@
-import {
-    StyleSheet,
-    View,
-    Image,
-    TouchableOpacity,
-    TextInput,
-    SafeAreaView,
-    Button,
-    Pressable,
-  } from "react-native";
-  import React, { useState } from "react";
-  import { Stack, Text } from "@react-native-material/core";
-  
-  function App({ navigation }) {
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, Pressable } from 'react-native';
+import { useNavigation } from "@react-navigation/native"
+import React, { useEffect, useState } from 'react';
+
+export default function Screen2({ route, navigation }) {
     return (
-      <View style={styles.container}>
-          <Text>Hello</Text>
-      </View>
+        <View style={style.container}>
+            <View style={{ display: "flex", flexDirection: "row", marginTop: 30, marginLeft: "30px" }}>
+                <Pressable onPress={() => navigation.goBack()} style={style.Header}>
+                    <Image source={require("../assets/Icon-Left-Button.png")}  style={style.iconArrow}/>
+                </Pressable>
+            </View>
+        </View>
     );
-  }
-  
-  const styles = StyleSheet.create({
+}
+
+const style = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: "white",
-      justifyContent: "center",
-      alignItems: "center",
+        display: "flex",
     },
-  });
-  
-  export default App;
+
+    iconArrow: {
+        width: 36,
+        height: 36,
+    }
+});

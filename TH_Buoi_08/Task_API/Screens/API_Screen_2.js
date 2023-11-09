@@ -26,7 +26,7 @@ export default function Screen2({ route, navigation }) {
         console.log(data);
     }, [])
 
-    const {nameTextInput} = route.params;
+    const {Name} = route.params;
 
     return (
         <View style={style.container}>
@@ -42,8 +42,7 @@ export default function Screen2({ route, navigation }) {
                     <View style={{
                       marginLeft: "10px",
                     }}>
-                        {/* <h2 style={{ margin: 0 }}>{data[0]?.name}</h2> */}
-                        <h2 style={{ margin: 0 }}>{nameTextInput}</h2>
+                        <h2 style={{ margin: 0 }}>{Name}</h2>
                         <p style={{ margin: 0 }}>Have a great day ahead</p>
                     </View>
                 </View>
