@@ -1,0 +1,129 @@
+import {
+  StyleSheet,
+  View,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  SafeAreaView,
+  Button,
+  Pressable,
+  Alert,
+} from "react-native";
+import React, { useEffect, useRoute, useState } from "react";
+import { Stack, Text } from "@react-native-material/core";
+import { MaterialIcons } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
+
+function App({ navigation }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    const validateLogin = async () => {
+      try {
+        const token = await AsyncStorage.getItem("token");
+        if (token) {
+          navigation.replace("TakeNote");
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
+  }, []);
+  const getAccount = () => {
+    const user = {
+      email: email,
+      password: password,
+    };
+    axios
+    .get("https://6544bdcd5a0b4b04436ce150.mockapi.io/TakeNote_Account")
+    .then((response) => {
+      console.log(response);
+      const token = response.data.token;
+      AsyncStorage.setItem("token", token);
+      navigation.replace("TakeNote");
+    })
+    .catch((err) => {
+      Alert.alert("Error", err.message);
+      console.log(err);
+    });
+  };
+
+  return (
+    <View style={styles.container}>
+      <View>
+        <Image
+          style={{
+            width: "200px",
+            height: "200px",
+          }}
+          source={require("../assets/Image92.png")}
+        />
+        <Text>
+          <h1>TAKE NOTE</h1>
+        </Text>
+      </View>
+      <View style={styles.input}>
+        <MaterialIcons name="email" size={24} color="black" />
+        <TextInput
+          onChangeText={setEmail}
+          value={email}
+          style={{
+            paddingLeft: 10,
+          }}
+          placeholder="input your email"
+        ></TextInput>
+      </View>
+      <View style={styles.input}>
+        <MaterialIcons name="lock" size={24} color="black" />
+        <TextInput
+          onChangeText={setPassword}
+          value={password}
+          secureTextEntry={true}
+          style={{
+            paddingLeft: 10,
+          }}
+          placeholder="input your password"
+        ></TextInput>
+      </View>
+      <View>
+        <Pressable
+          style={{
+            borderWidth: 1,
+            padding: 5,
+            marginVertical: "5px",
+          }}
+          onPress={getAccount}
+        >
+          Login
+        </Pressable>
+      </View>
+      <Pressable
+        style={{
+          marginVertical: "5px",
+        }}
+        onPress={() => navigation.navigate("SignUp")}
+      >
+        Sign-up
+      </Pressable>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "white",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  input: {
+    flexDirection: "row",
+    marginVertical: 5,
+    borderWidth: 1,
+    padding: 5,
+  },
+});
+
+export default App;
