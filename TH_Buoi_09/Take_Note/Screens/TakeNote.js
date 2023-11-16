@@ -47,6 +47,7 @@ function App({ navigation }) {
   return (
     <ScrollView>
       <View style={styles.container}>
+      <Pressable onPress={navigation.goBack()}>Back</Pressable>
         <Image
           style={{
             width: "100px",
@@ -66,7 +67,7 @@ function App({ navigation }) {
               >
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                   <Text style={{ paddingRight: 10 }}> Id note: {post.id} | </Text>
-                  <Pressable onPress={() => navigation.navigate("UpdateNote",post.note)}>Update</Pressable>
+                  <Pressable onPress={() => navigation.navigate("UpdateNote",post.id)}>Update</Pressable>
                   <Text> | </Text>
                   <Pressable onPress={()=>delNote(post.id)}>Delete</Pressable>
                 </View>

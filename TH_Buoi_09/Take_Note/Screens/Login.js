@@ -2,10 +2,7 @@ import {
   StyleSheet,
   View,
   Image,
-  TouchableOpacity,
   TextInput,
-  SafeAreaView,
-  Button,
   Pressable,
   Alert,
 } from "react-native";
@@ -16,8 +13,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
 function App({ navigation }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     const validateLogin = async () => {
@@ -37,17 +34,25 @@ function App({ navigation }) {
       password: password,
     };
     axios
-    .get("https://6544bdcd5a0b4b04436ce150.mockapi.io/TakeNote_Account")
-    .then((response) => {
-      console.log(response);
-      const token = response.data.token;
-      AsyncStorage.setItem("token", token);
-      navigation.replace("TakeNote");
-    })
-    .catch((err) => {
-      Alert.alert("Error", err.message);
-      console.log(err);
-    });
+      .get("https://6544bdcd5a0b4b04436ce150.mockapi.io/TakeNote_Account")
+      .then((response) => {
+        console.log(response.data);
+        const user = response.data.find(
+          (u) => u.email === email && u.password === password
+        );
+        if (user) {
+          navigation.replace("TakeNote");
+          console.log(user);
+        } else {
+          Alert.alert(
+            "Đăng nhập không thành công. Kiểm tra lại thông tin đăng nhập."
+          );
+        }
+      })
+      .catch((err) => {
+        Alert.alert("Error", err.message);
+        console.log(err);
+      });
   };
 
   return (
