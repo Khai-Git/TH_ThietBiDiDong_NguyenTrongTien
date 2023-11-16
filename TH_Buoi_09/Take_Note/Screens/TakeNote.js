@@ -68,7 +68,7 @@ function App({ navigation }) {
                   <Text style={{ paddingRight: 10 }}> Id note: {post.id} | </Text>
                   <Pressable onPress={() => navigation.navigate("UpdateNote",post.note)}>Update</Pressable>
                   <Text> | </Text>
-                  <Pressable onPress={() => delNote()}>Delete</Pressable>
+                  <Pressable onPress={()=>delNote(post.id)}>Delete</Pressable>
                 </View>
                 <Text>Content: </Text>
                 <Text>{post.note}</Text>
