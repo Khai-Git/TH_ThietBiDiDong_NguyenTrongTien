@@ -1,20 +1,6 @@
-import {
-  StyleSheet,
-  View,
-  Image,
-  TouchableOpacity,
-  TextInput,
-  SafeAreaView,
-  Button,
-  Pressable,
-  Alert,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, View, Image, Pressable, ScrollView,} from "react-native";
 import React, { useEffect, useRoute, useState } from "react";
 import { Stack, Text } from "@react-native-material/core";
-import { MaterialIcons } from "@expo/vector-icons";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import axios from "axios";
 
 function App({ navigation }) {
   const [note, setNote] = useState("");
@@ -29,25 +15,38 @@ function App({ navigation }) {
   }, []);
 
   const delNote = (id) => {
-    fetch(`http://6544bdcd5a0b4b04436ce150.mockapi.io/noteList/${id}`,{
-      method: "DELETE"
+    fetch(`http://6544bdcd5a0b4b04436ce150.mockapi.io/noteList/${id}`, {
+      method: "DELETE",
     })
-    .then(res => {
-      console.log(res.status);
-      console.log(res.headers);
-      return res.json()
-    })
-    .then((result)=>{
-      console.log(result);
-    }, (error)=>{
-      console.log(error);
-    })
-  }
+      .then((res) => {
+        console.log(res.status);
+        console.log(res.headers);
+        return res.json();
+      })
+      .then(
+        (result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
 
   return (
     <ScrollView>
+      <Pressable
+        style={{
+          borderWidth: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          height: "50px",
+        }}
+        onPress={navigation.goBack()}
+      >
+        Back
+      </Pressable>
       <View style={styles.container}>
-      <Pressable onPress={navigation.goBack()}>Back</Pressable>
         <Image
           style={{
             width: "100px",
@@ -66,10 +65,17 @@ function App({ navigation }) {
                 }}
               >
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <Text style={{ paddingRight: 10 }}> Id note: {post.id} | </Text>
-                  <Pressable onPress={() => navigation.navigate("UpdateNote",post.id)}>Update</Pressable>
+                  <Text style={{ paddingRight: 10 }}>
+                    {" "}
+                    Id note: {post.id} |{" "}
+                  </Text>
+                  <Pressable
+                    onPress={() => navigation.navigate("UpdateNote", post.id)}
+                  >
+                    Update
+                  </Pressable>
                   <Text> | </Text>
-                  <Pressable onPress={()=>delNote(post.id)}>Delete</Pressable>
+                  <Pressable onPress={() => delNote(post.id)}>Delete</Pressable>
                 </View>
                 <Text>Content: </Text>
                 <Text>{post.note}</Text>

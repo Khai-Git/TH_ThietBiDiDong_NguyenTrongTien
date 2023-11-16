@@ -1,11 +1,4 @@
-import {
-  StyleSheet,
-  View,
-  Image,
-  TextInput,
-  Pressable,
-  Alert,
-} from "react-native";
+import { StyleSheet,View,Image,TextInput,Pressable,Alert,} from "react-native";
 import React, { useEffect, useRoute, useState } from "react";
 import { Stack, Text } from "@react-native-material/core";
 import { MaterialIcons } from "@expo/vector-icons";
