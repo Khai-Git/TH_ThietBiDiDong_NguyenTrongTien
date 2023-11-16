@@ -39,8 +39,14 @@ function App({ navigation }) {
   };
   return (
     <View style={styles.container}>
-      <View>
-        <Text onPress={() => navigation.goBack()}>Back</Text>
+      <View style={styles.container}>
+      <Text style={{
+        borderWidth: 1,
+        padding: 10,
+        backgroundColor: "aqua",
+        width: "300px",
+        textAlign: "center",
+      }} onPress={() => navigation.goBack()}>Back</Text>
         <Image
           style={{
             width: "200px",
