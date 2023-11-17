@@ -14,25 +14,22 @@ function App({ route, navigation }) {
   const [note, setNote] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const postId = route.params;
+  const {postId} = route.params;
+  // console.log(postId);
+  // console.log(postNote);
   console.log(route.params);
 
-  useEffect(() => {
-    fetch(`https://6544bdcd5a0b4b04436ce150.mockapi.io/noteList/${postId}`)
-      .then((response) => response.json())
-      .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
-  }, []);
-  const putNote = () => {
+  const putNote = (id) => {
     const noteList = {
       note: note,
     };
-    fetch(`https://6544bdcd5a0b4b04436ce150.mockapi.io/noteList/${postId}`, {
+    fetch(`https://6544bdcd5a0b4b04436ce150.mockapi.io/noteList/${route.params}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ note }),
+      body: JSON.stringify({note}),
     })
       .then((response) => response.json(), console.log(response.json()))
+      .then((data)=>{setNote("")})
       .catch((response) => response.json());
   };
 
@@ -51,7 +48,7 @@ function App({ route, navigation }) {
         </Text>
         <View>
           <Text>Content: </Text>
-          <TextInput value={postId}></TextInput>
+          <TextInput value={route.params} onChangeText={setNote}></TextInput>
         </View>
         <Pressable
           style={{
@@ -61,9 +58,7 @@ function App({ route, navigation }) {
             backgroundColor: "lightblue",
           }}
           onPress={() => {
-            putNote({
-              note,
-            });
+            putNote(route.params);
           }}
         >
           Update

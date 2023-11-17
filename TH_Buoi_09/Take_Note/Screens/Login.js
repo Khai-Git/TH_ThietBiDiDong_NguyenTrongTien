@@ -8,19 +8,7 @@ import axios from "axios";
 function App({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    const validateLogin = async () => {
-      try {
-        const token = await AsyncStorage.getItem("token");
-        if (token) {
-          navigation.replace("TakeNote");
-        }
-      } catch (e) {
-        console.log(e);
-      }
-    };
-  }, []);
+  
   const getAccount = () => {
     const user = {
       email: email,
@@ -34,7 +22,7 @@ function App({ navigation }) {
           (u) => u.email === email && u.password === password
         );
         if (user) {
-          navigation.replace("TakeNote");
+          navigation.replace("TakeNote", {user});
           console.log(user);
         } else {
           Alert.alert(

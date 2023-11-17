@@ -2,7 +2,8 @@ import { StyleSheet, View, Image, Pressable, ScrollView,} from "react-native";
 import React, { useEffect, useRoute, useState } from "react";
 import { Stack, Text } from "@react-native-material/core";
 
-function App({ navigation }) {
+function App({ route,navigation }) {
+  const {noteList} = route?.params;
   const [note, setNote] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -66,11 +67,10 @@ function App({ navigation }) {
               >
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                   <Text style={{ paddingRight: 10 }}>
-                    {" "}
-                    Id note: {post.id} |{" "}
+                    Id note: {post.id} |
                   </Text>
                   <Pressable
-                    onPress={() => navigation.navigate("UpdateNote", post.id)}
+                    onPress={() => navigation.navigate("UpdateNote", note)}
                   >
                     Update
                   </Pressable>
