@@ -1,4 +1,11 @@
-import { StyleSheet,View,Image,TextInput,Pressable,Alert,} from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  TextInput,
+  Pressable,
+  Alert,
+} from "react-native";
 import React, { useEffect, useRoute, useState } from "react";
 import { Stack, Text } from "@react-native-material/core";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -8,7 +15,7 @@ import axios from "axios";
 function App({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const getAccount = () => {
     const user = {
       email: email,
@@ -17,12 +24,12 @@ function App({ navigation }) {
     axios
       .get("https://6544bdcd5a0b4b04436ce150.mockapi.io/TakeNote_Account")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         const user = response.data.find(
           (u) => u.email === email && u.password === password
         );
         if (user) {
-          navigation.replace("TakeNote", {user});
+          navigation.replace("TakeNote", { user });
           console.log(user);
         } else {
           Alert.alert(
@@ -38,18 +45,16 @@ function App({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <View>
-        <Image
-          style={{
-            width: "200px",
-            height: "200px",
-          }}
-          source={require("../assets/Image92.png")}
-        />
-        <Text>
-          <h1>TAKE NOTE</h1>
-        </Text>
-      </View>
+      <Image
+        style={{
+          width: "200px",
+          height: "200px",
+        }}
+        source={require("../assets/Image92.png")}
+      />
+      <Text>
+        <h1>TAKE NOTE</h1>
+      </Text>
       <View style={styles.input}>
         <MaterialIcons name="email" size={24} color="black" />
         <TextInput
@@ -73,25 +78,23 @@ function App({ navigation }) {
           placeholder="input your password"
         ></TextInput>
       </View>
-      <View>
-        <Pressable
-          style={{
-            borderWidth: 1,
-            padding: 5,
-            marginVertical: "5px",
-          }}
-          onPress={getAccount}
-        >
-          Login
-        </Pressable>
-      </View>
+      <Pressable
+        style={{
+          borderWidth: 1,
+          padding: 5,
+          marginVertical: "5px",
+        }}
+        onPress={getAccount}
+      >
+        <Text>Login</Text>
+      </Pressable>
       <Pressable
         style={{
           marginVertical: "5px",
         }}
         onPress={() => navigation.navigate("SignUp")}
       >
-        Sign-up
+        <Text>Sign-Up</Text>
       </Pressable>
     </View>
   );

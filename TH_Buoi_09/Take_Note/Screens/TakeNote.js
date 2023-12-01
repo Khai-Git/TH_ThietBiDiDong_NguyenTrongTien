@@ -3,24 +3,24 @@ import React, { useEffect, useRoute, useState } from "react";
 import { Stack, Text } from "@react-native-material/core";
 
 function App({ route,navigation }) {
-  const {noteList} = route?.params;
   const [note, setNote] = useState("");
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const noteList = [useEffect(() => {
     fetch("https://6544bdcd5a0b4b04436ce150.mockapi.io/noteList")
       .then((response) => response.json())
       .then((json) => setNote(json))
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
-  }, []);
+  },[])]
+  
 
   const delNote = (id) => {
     fetch(`http://6544bdcd5a0b4b04436ce150.mockapi.io/noteList/${id}`, {
       method: "DELETE",
     })
       .then((res) => {
-        console.log(res.status);
+        // console.log(res.status);
         console.log(res.headers);
         return res.json();
       })
@@ -36,17 +36,6 @@ function App({ route,navigation }) {
 
   return (
     <ScrollView>
-      <Pressable
-        style={{
-          borderWidth: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          height: "50px",
-        }}
-        onPress={navigation.goBack()}
-      >
-        Back
-      </Pressable>
       <View style={styles.container}>
         <Image
           style={{
@@ -59,26 +48,26 @@ function App({ route,navigation }) {
           {loading ? (
             <Text>Loading .....</Text>
           ) : (
-            note.map((post) => (
+            note.map((item,index) => (
               <View
+              key={index}
                 style={{
                   padding: 10,
                 }}
               >
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                   <Text style={{ paddingRight: 10 }}>
-                    Id note: {post.id} |
+                    Id note: {item.id} |
                   </Text>
                   <Pressable
-                    onPress={() => navigation.navigate("UpdateNote", note)}
+                    onPress={() => navigation.navigate("UpdateNote", item)}
                   >
-                    Update
+                    <Text>Update</Text>
                   </Pressable>
                   <Text> | </Text>
-                  <Pressable onPress={() => delNote(post.id)}>Delete</Pressable>
+                  <Pressable onPress={() => delNote(item.id)}><Text>Delete</Text></Pressable>
                 </View>
-                <Text>Content: </Text>
-                <Text>{post.note}</Text>
+                <Text>Content: {item.note}</Text>
               </View>
             ))
           )}
@@ -91,7 +80,7 @@ function App({ route,navigation }) {
           }}
           onPress={() => navigation.navigate("AddNote")}
         >
-          Add Note
+          <Text>Add Note</Text>
         </Pressable>
       </View>
     </ScrollView>

@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image, TextInput, Pressable,} from "react-native";
+import { StyleSheet, View, Image, TextInput, Pressable } from "react-native";
 import React, { useEffect, useRoute, useState } from "react";
 import { Stack, Text } from "@react-native-material/core";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -22,20 +22,25 @@ function App({ navigation }) {
         console.log("Success:", data);
         setEmail("");
         setPassword("");
-        navigation.navigate("Login");
+        navigation.replace("Login");
       })
       .catch((response) => response.json());
   };
   return (
     <View style={styles.container}>
       <View style={styles.container}>
-      <Text style={{
-        borderWidth: 1,
-        padding: 10,
-        backgroundColor: "aqua",
-        width: "300px",
-        textAlign: "center",
-      }} onPress={() => navigation.goBack()}>Back</Text>
+        <Text
+          style={{
+            borderWidth: 1,
+            padding: 10,
+            backgroundColor: "aqua",
+            width: "300px",
+            textAlign: "center",
+          }}
+          onPress={() => navigation.goBack()}
+        >
+          Back
+        </Text>
         <Image
           style={{
             width: "200px",
@@ -83,7 +88,7 @@ function App({ navigation }) {
           });
         }}
       >
-        Submit
+        <Text>Submit</Text>
       </Pressable>
     </View>
   );

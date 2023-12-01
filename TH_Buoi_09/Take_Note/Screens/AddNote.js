@@ -16,7 +16,7 @@ function App({ navigation }) {
         .then((data) => {
           console.log("Success:", data);
           setNote("");
-          navigation.navigate("TakeNote");
+          navigation.replace("TakeNote");
         })
         .catch((response) => response.json());
     }
@@ -63,7 +63,7 @@ function App({ navigation }) {
             });
           }}
         >
-          Add
+          <Text>Add</Text>
         </Pressable>
       </View>
     </View>

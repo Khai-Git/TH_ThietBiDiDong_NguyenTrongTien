@@ -14,27 +14,48 @@ function App({ route, navigation }) {
   const [note, setNote] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const {postId} = route.params;
+  const idItem = route.params;
+  // console.log(idItem);
+  // console.log(idItem.note);
   // console.log(postId);
   // console.log(postNote);
-  console.log(route.params);
+  // console.log(route.params);
 
-  const putNote = (id) => {
-    const noteList = {
-      note: note,
-    };
-    fetch(`https://6544bdcd5a0b4b04436ce150.mockapi.io/noteList/${route.params}`, {
+  const putNote = (id, note) => {
+    fetch(`http://6544bdcd5a0b4b04436ce150.mockapi.io/noteList/${id}`, {
       method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({note}),
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({note:note})
     })
-      .then((response) => response.json(), console.log(response.json()))
-      .then((data)=>{setNote("")})
-      .catch((response) => response.json());
+      .then((res) => {
+        // console.log(res.status);
+        // console.log(res.headers);
+        return res.json();
+      })
+      .then(
+        (result) => {
+          console.log(result);
+          setNote("")
+          navigation.replace("TakeNote")
+        },
+        (error) => {
+          console.log(error);
+        }
+        
+      );
   };
 
   return (
     <View style={styles.container}>
+      <Text style={{
+        borderWidth: 1,
+        padding: 10,
+        backgroundColor: "aqua",
+        width: "300px",
+        textAlign: "center",
+      }} onPress={() => navigation.goBack()}>Back</Text>
       <View style={styles.container}>
         <Image
           style={{
@@ -47,8 +68,8 @@ function App({ route, navigation }) {
           <h1>Update Note</h1>
         </Text>
         <View>
-          <Text>Content: </Text>
-          <TextInput value={route.params} onChangeText={setNote}></TextInput>
+          <Text>Content: {idItem.note}</Text>
+          <TextInput value={note} onChangeText={(text)=>setNote(text)}/>
         </View>
         <Pressable
           style={{
@@ -58,10 +79,10 @@ function App({ route, navigation }) {
             backgroundColor: "lightblue",
           }}
           onPress={() => {
-            putNote(route.params);
+            putNote(idItem.id,note);
           }}
         >
-          Update
+          <Text>Update</Text>
         </Pressable>
       </View>
     </View>
